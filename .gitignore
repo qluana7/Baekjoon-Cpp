@@ -3,3 +3,5 @@ auto/
 .vscode/
 .ionide/
 /cache
+/test.cpp
+/test
