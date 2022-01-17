@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int table[100'000];
+int table[100'001];
 
 int main() {
     cin.tie(0); ios_base::sync_with_stdio(false);
