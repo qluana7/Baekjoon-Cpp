@@ -7,7 +7,7 @@ using namespace std;
 
 void BFS(int, int, qint q);
 
-int table[1000][1000];
+int table[1001][1001];
 
 int main() {
     int x, y; cin >> y >> x;
