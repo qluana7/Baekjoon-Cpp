@@ -26,14 +26,16 @@ ll init(vint& src, vint& tree, int pos, int st, int ed) {
 ll get(vint& tree, int pos, int st, int ed, int lft, int rgt) {
     if (rgt < st || lft > ed) return 0;
     else if (lft <= st && ed <= rgt) return tree[pos];
-    else
-        return get(tree, pos * 2, st, (st + ed) / 2, lft, rgt) + get(tree, pos * 2 + 1, (st + ed) / 2 + 1, ed, lft, rgt);
+    else return
+        get(tree, pos * 2, st, (st + ed) / 2, lft, rgt) +
+        get(tree, pos * 2 + 1, (st + ed) / 2 + 1, ed, lft, rgt);
 }
 
 void upd(vint& tree, int pos, int st, int ed, int vpos, ll diff) {
     if (st > vpos || vpos > ed) return;
     tree[pos] += diff;
     if (st == ed) return;
+    
     upd(tree, pos * 2, st, (st + ed) / 2, vpos, diff);
     upd(tree, pos * 2 + 1, (st + ed) / 2 + 1, ed, vpos, diff);
 }
