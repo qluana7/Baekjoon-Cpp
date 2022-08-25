@@ -1,3 +1,13 @@
+/*
+ * Algorithm Name : Topology Sort
+ *
+ * Description
+ *    - 위상 정렬 구현
+ * 
+ * Reference
+ *    - https://m.blog.naver.com/ndb796/221236874984
+ */
+
 #include <vector>
 #include <queue>
 
