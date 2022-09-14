@@ -80,7 +80,7 @@ void read_ex(char* zb, size_t bsize, size_t pos) {
     if (pos == 0) return;
     
     size_t msize = bsize - pos;
-    memmove(zb + pos, zb, msize);
+    memmove(zb, zb + pos, msize);
     
     char* b = zb + msize;
     syscall(0, 0, b, pos);
@@ -90,7 +90,7 @@ void buffer_read_ex(buffer* buf) {
     if (buf->position == 0) return;
     
     size_t msize = buf->size - buf->position;
-    memmove(buf->buffer + buf->position, buf->buffer, msize);
+    memmove(buf->buffer, buf->buffer + buf->position, msize);
     
     char* b = buf->buffer + msize;
     syscall(0, 0, b, buf->position);
@@ -201,8 +201,13 @@ type_t itoa(char** zb, type_t n, char c) {
 		return 1 + neg;
 	}
 	
-	while (n != 0) { t *= 10; t += n % 10; n /= 10; q++; }
-	while (q != n) { *buf = t % 10 + 48; t /= 10; buf++; n++; }
+	while (n != 0) { *buf++ = n % 10 + 48; n /= 10; q++; }
+	
+	for (int i = 0, l = q >> 1; i < l; i++) {
+		char* st = *zb + i, *ed = buf - i - 1;
+		char tc = *st; *st = *ed; *ed = tc;
+	}
+	
 	*buf = c;
 	
 	*zb = buf;
@@ -212,7 +217,7 @@ type_t itoa(char** zb, type_t n, char c) {
 
 type_t buffer_itoa(buffer* buf, type_t n, char c) {
 	char* b = buf->bufpos;
-	type_t q = 0, t = 0; char neg = 0;
+	type_t q = 0; char neg = 0;
     
     if (n < 0) { *b = '-'; b++; buf->position++; neg = 1; n = -n; }
 	
@@ -225,8 +230,13 @@ type_t buffer_itoa(buffer* buf, type_t n, char c) {
 		return 1 + neg;
 	}
 	
-	while (n != 0) { t *= 10; t += n % 10; n /= 10; q++; }
-	while (q != n) { *b = t % 10 + 48; t /= 10; b++; n++; }
+	while (n != 0) { *b++ = n % 10 + 48; n /= 10; q++; }
+	
+	for (int i = 0, l = q >> 1; i < l; i++) {
+		char* st = buf->bufpos + i, *ed = b - i - 1;
+		char tc = *st; *st = *ed; *ed = tc;
+	}
+	
 	*b = c;
 	
 	buf->bufpos = b;
