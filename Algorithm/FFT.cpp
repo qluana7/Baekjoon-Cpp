@@ -28,7 +28,7 @@ void FFT(vector<cpx>& v, bool inv = false) {
     }
     
     for (int i = 1; i < n; i <<= 1) {
-        double x = -pi / i * (inv ? 1 : -1);
+        double x = pi / i * (inv ? 1 : -1);
 
         cpx w = cpx(cos(x), sin(x));
 
