@@ -7,3 +7,5 @@ auto/
 /test
 /TODO
 bjmgr/
+/**/bin
+/**/.cph
