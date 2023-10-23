@@ -18,6 +18,9 @@ int head(vector<int>& v, int idx) {
 
 int main() {
     int n, m; cin >> n >> m;
+    
+    if (n == 2) { cout << 0; return 0; }
+    
     vector<edge> v(m);
     
     for (auto& x : v) cin >> x.start >> x.end >> x.cost;
