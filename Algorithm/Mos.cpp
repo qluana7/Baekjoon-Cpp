@@ -41,7 +41,7 @@ int main() {
     sort(query.begin(), query.end(), [k](const Query& a, const Query& b) {
         int l1 = a.l / k, l2 = b.l / k;
         if (l1 != l2) return l1 < l2;
-        else return a.r / k < b.r / k;
+        else return a.r < b.r;
     });
     
     vector<int> output(m);
@@ -55,20 +55,12 @@ int main() {
     for (int i = 1; i < query.size(); i++) {
         auto _l = query[i].l, _r = query[i].r;
         
-        if (_l < l) {
-            for (int j = _l; j < l; j++) sum += v[j - 1];
-        } else {
-            for (int j = l; j < _l; j++) sum -= v[j - 1];
-        }
-        
-        if (_r < r) {
-            for (int j = r; j > _r; j--) sum -= v[j - 1];
-        } else {
-            for (int j = _r; j > r; j--) sum += v[j - 1];
-        }
+        while (_l < l) { l--; sum += v[l - 1]; }
+        while (_r > r) { r++; sum += v[r - 1]; }
+        while (_l > l) { sum -= v[l - 1]; l++; }
+        while (_r < r) { sum -= v[r - 1]; r--; }
         
         output[query[i].index] = sum;
-        l = _l; r = _r;
     }
     
     for (auto x : output) cout << x << "\n";
