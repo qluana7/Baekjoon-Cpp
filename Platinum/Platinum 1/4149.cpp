@@ -1,6 +1,3 @@
-#pragma GCC optimize ("O3,unroll-loops")
-#pragma GCC target("avx,avx2")
-
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -13,9 +10,9 @@ using namespace std;
 
 random_device rd;
 mt19937 engine(rd());
-uniform_int_distribution<int> rnd(1, 9);
+uniform_int_distribution<int> rnd(1, 20);
 
-ll i64a[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+ll i64a[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
 
 ll modpow(ll n, ll p, ll m) {
     __int128_t _n = n, _m = m, r = 1;
@@ -83,11 +80,13 @@ int main() {
     if (n == 1) return 0;
     if (isprime(n)) { cout << n; return 0; }
     
-    while (n > 1) {
+    while (true) {
         ll t = pollard_rho(n);
         
         v.push_back(t);
         n /= t;
+        
+        if (isprime(n)) { v.push_back(n); break; }
     }
     
     sort(v.begin(), v.end());
