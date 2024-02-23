@@ -71,7 +71,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int t; cin >> t;
         
-        if (np[t] > 0 || (int)round(zb[t].real()) > 0) { cout << t << " "; c++; }
+        if (np[t] > 0 || (int)round(zb[t].real()) > 0) c++;
     }
     
     cout << c;
