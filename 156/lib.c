@@ -142,6 +142,16 @@ void buffer_write(buffer* buf, size_t len) {
 
 #define digit(c) ('0' <= c && c <= '9')
 
+type_t readi(char* b) {
+	type_t n = 0;
+	while (*b && digit(*b))
+		n = n * 10 + *b++ - '0';
+	b++;
+	
+	return n;
+}
+
+/* This version modify buffer pointer */
 type_t readi(char** zb) {
 	char* b = *zb;
 	
@@ -186,6 +196,32 @@ type_t buffer_readi(buffer* buf) {
  *   It is same as { (int)log10(n) + 1 }
  */
 
+int itoa(char* buf, int n, char c) {
+    char *tmp = buf;
+	int q = 0, t = 0; char neg = 0;
+    
+    if (n < 0) { *buf = '-'; buf++; neg = 1; n = -n; }
+	
+	if (n == 0) {
+		*buf = 48; buf++;
+		*buf = c;
+		
+		return 1 + neg;
+	}
+	
+	while (n != 0) { *buf++ = n % 10 + 48; n /= 10; q++; }
+	
+	for (int i = 0, l = q >> 1; i < l; i++) {
+		char* st = tmp + i, *ed = buf - i - 1;
+		char tc = *st; *st = *ed; *ed = tc;
+	}
+	
+	*buf = c;
+	
+	return q + neg;
+}
+
+/* This version modify buffer pointer */
 type_t itoa(char** zb, type_t n, char c) {
 	char* buf = *zb;
 	type_t q = 0, t = 0; char neg = 0;
@@ -265,4 +301,25 @@ size_t strlen(char* zb) {
 	while (*zb != '\n' && *zb != 0) { zb++; r++; }
 	
 	return r;
+}
+
+/*
+ * Description :
+ *   The function that copy string to source string.
+ * 
+ * Parameters :
+ *   - src : Source string
+ * 	 - data : Data String
+ * 
+ * Return :
+ *   None
+ * 
+ * Notes :
+ *   This function copy value from data until meet '\0'.
+ *   '\0' is inserted at the end of the source.
+ */
+
+void strcpy(char* src, char* data) {
+    for (;*data; src++, data++) *src = *data;
+    *(++src) = '\0';
 }
