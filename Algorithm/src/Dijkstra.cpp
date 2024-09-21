@@ -47,7 +47,7 @@ using namespace std;
 vector<vector<pii>> line_info;
 int max_node;
 
-struct cmp {
+struct pq_cmp {
     bool operator() (const pii& a, const pii& b) {
         return a.second > b.second;
     }
@@ -56,7 +56,7 @@ struct cmp {
 int dijkstra(int start, int end) {
     vector<int> v(max_node, INF);
     
-    priority_queue<pii, vector<pii>, cmp> pq;
+    priority_queue<pii, vector<pii>, pq_cmp> pq;
     pq.emplace(start, 0);
     v[start - 1] = 0;
     
@@ -78,34 +78,3 @@ int dijkstra(int start, int end) {
     return v[end - 1];
 }
 
-// TESTING
-
-#include <iostream>
-
-int main() {
-    /* input
-     * 
-     * 4 5
-     * 1 2 3
-     * 1 3 6
-     * 1 4 7
-     * 2 3 1
-     * 3 4 1
-     */
-    
-    int n, m; cin >> n >> m; max_node = n;
-    
-    line_info = vector<vector<pii>>(n, vector<pii>());
-    
-    for (int i = 0; i < m; i++) {
-        int a, b, x; cin >> a >> b >> x;
-        line_info[a - 1].emplace_back(b, x);
-        line_info[b - 1].emplace_back(a, x);
-    }
-    
-    cin >> n >> m;
-    
-    cout << n << " -> " << m << " = " << dijkstra(n, m);
-    
-    return 0;
-}

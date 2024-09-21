@@ -26,7 +26,7 @@ llong init(vint& src, vint& tree, int pos, int st, int ed) {
 }
 
 llong getSum(vint& tree, int pos, int st, int ed, int lft, int rgt) {
-    updLazy(tree, pos, st, ed);
+    // updLazy(tree, pos, st, ed);
     if (rgt < st || lft > ed) return 0;
     else if (lft <= st && ed <= rgt) return tree[pos];
     else return

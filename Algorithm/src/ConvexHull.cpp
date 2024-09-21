@@ -15,7 +15,9 @@
 #include <vector>
 #include <algorithm>
 
+#ifndef ll
 #define ll long long
+#endif
 
 using namespace std;
 

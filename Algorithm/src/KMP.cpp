@@ -44,24 +44,3 @@ vector<int> kmp(string src, string pat) {
     
     return out;
 }
-
-// TEST
-
-#include <iostream>
-
-int main() {
-    /* INPUT
-     *
-     * Hello, World! Hello, C++! Hello Everyone!
-     * Hello
-     */
-    
-    string str, pat;
-    getline(cin, str); getline(cin, pat);
-    
-    auto v = kmp(str, pat);
-    
-    for (int x : v) cout << x << " ";
-    
-    return 0;
-}

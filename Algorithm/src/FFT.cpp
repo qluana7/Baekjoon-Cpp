@@ -61,7 +61,9 @@ void FFT(vector<cpx>& v, bool inv = false) {
 
 using namespace std;
 
-using ll = long long int;
+#ifndef ll
+#define ll long long
+#endif
 
 ll npow(ll a, ll b) {
     ll r = 1;
