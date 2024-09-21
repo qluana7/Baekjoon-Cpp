@@ -56,16 +56,13 @@ void FFT(vector<cpx>& v, bool inv = false) {
 
 #include <vector>
 
-#define _w 3LL
-#define mod_p 998244353LL
-
 using namespace std;
 
 #ifndef ll
 #define ll long long
 #endif
 
-ll npow(ll a, ll b) {
+ll npow(ll a, ll b, ll mod_p) {
     ll r = 1;
 
     while (b) {
@@ -77,6 +74,7 @@ ll npow(ll a, ll b) {
     return r;
 }
 
+template<ll _w = 3LL, ll mod_p = 998244353LL>
 void FFT(vector<ll>& v, bool inv = false) {
     int n = v.size();
     
@@ -128,4 +126,18 @@ void convolution(vector<T>& v1, vector<T>& v2) {
         v1[i] = (v1[i] * v2[i]) % mod_p;
         
     FFT(v1, true);
+}
+
+template<ll _w = 3LL, ll mod_p = 998244353LL>
+void convolution(vector<ll>& v1, vector<ll>& v2) {
+    int s = 2;
+    while (s < v1.size() + v2.size()) s <<= 1;
+    
+    v1.resize(s); FFT<_w, mod_p>(v1, false);
+    v2.resize(s); FFT<_w, mod_p>(v2, false);
+    
+    for (int i = 0; i < s; i++)
+        v1[i] = (v1[i] * v2[i]) % mod_p;
+        
+    FFT<_w, mod_p>(v1, true);
 }
