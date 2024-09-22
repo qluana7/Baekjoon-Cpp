@@ -84,8 +84,8 @@ void FFT(vector<ll>& v, bool inv = false) {
         if (i < j) swap(v[i], v[j]);
     }
     
-    ll x = npow(_w, (mod_p - 1) / n);
-    if (inv) x = npow(x, mod_p - 2);
+    ll x = npow(_w, (mod_p - 1) / n, mod_p);
+    if (inv) x = npow(x, mod_p - 2, mod_p);
 
     vector<ll> root(n >> 1); root[0] = 1;
 
@@ -107,7 +107,7 @@ void FFT(vector<ll>& v, bool inv = false) {
     }
 
     if (inv) {
-        int t = npow(n, mod_p - 2);
+        ll t = npow(n, mod_p - 2, mod_p);
 
         for (int i = 0; i < n; i++)
             v[i] = (v[i] * t) % mod_p;
@@ -123,7 +123,7 @@ void convolution(vector<T>& v1, vector<T>& v2) {
     v2.resize(s); FFT(v2, false);
     
     for (int i = 0; i < s; i++)
-        v1[i] = (v1[i] * v2[i]) % mod_p;
+        v1[i] *= v2[i];
         
     FFT(v1, true);
 }

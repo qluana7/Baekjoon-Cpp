@@ -26,19 +26,44 @@
 
 #include <iostream>
 #include <numeric>
+#include <random>
+
+#include "../MillerRabin"
 
 using namespace std;
 
-// Can use random at 
+#ifndef ll
+#define ll long long
+#endif
 
-inline int g(int x, int n) { return (((x % n) * (x % n)) % n + 1 /* here */) % n; }
+random_device rd;
+mt19937 engine;
+uniform_int_distribution rnd(1, 9);
 
-int pollard_rho(int n) {
-    int x = 3 /* and here. */, y = x, d = 1;
+inline ll g(__int128_t x, __int128_t n, __int128_t r) { return (((x % n) * (x % n)) % n + r) % n; }
+
+bool isprime(ll n) {
+    if (n == 1) return false;
+    if (n == 2 || n == 3) return true;
+    if (n % 2 == 0) return false;
+    for (auto a : i64a) {
+        if (n == a) return true;
+        if (!miller_rabin(n, a)) return false;
+    }
+    
+    return true;
+}
+
+ll pollard_rho(ll n) {
+    if (isprime(n)) return n;
+    if (n == 1) return 1;
+    if (n % 2 == 0) return 2;
+
+    ll x = 3, y = x, d = 1, r = rnd(engine);
     
     while (d == 1) {
-        x = g(x, n);
-        y = g(g(y, n), n);
+        x = g(x, n, r);
+        y = g(g(y, n, r), n, r);
         d = gcd(abs(x - y), n);
         
         if (d == n) return pollard_rho(n);
