@@ -11,3 +11,4 @@
 #include "PollardRho"
 #include "SegmentTree"
 #include "TopologySort"
+#include "Trie"
