@@ -10,46 +10,44 @@
 <details>
 <summary>알고리즘 구현 리스트</summary>
 
-### Math
-- [FFT](Algorithm/src/FFT.cpp)
-- [MillerRabin](Algorithm/src/MillerRabin.cpp)
-- [PollardRho](Algorithm/src/PollardRho.cpp)
-
-### String
-- [KMP](Algorithm/src/KMP.cpp)
-- [Manacher](Algorithm/src/Manacher.cpp)
-
-### DP
-- [LCS](Algorithm/src/LCS.cpp)
-
-### Graph
-- [DFS_BFS](Algorithm/src/DFS_BFS.cpp)
-- [Dijkstra](Algorithm/src/Dijkstra.cpp)
-- [TopologySort](Algorithm/src/TopologySort.cpp)
-- [MST](Algorithm/src/MST.cpp)
-
-### Tree
-- [FenwickTree](Algorithm/src/FenwickTree.cpp)
-- [SegmentTree](Algorithm/src/SegmentTree.cpp)
-- [Trie](Algorithm/src/Trie.cpp)
-
-### Geometry
-- [ConvexHull](Algorithm/src/ConvexHull.cpp)
-
-### Others
-- [Mos](Algorithm/src/Mos.cpp)
+| Category | Algorithm | Description |
+|----------|------------|-------------|
+| **Math** | [FFT](Algorithm/src/FFT.cpp) | 고속 푸리에 변환 알고리즘 |
+|          | [MillerRabin](Algorithm/src/MillerRabin.cpp) | 밀러-라빈 소수 판별법 |
+|          | [PollardRho](Algorithm/src/PollardRho.cpp) | 폴라드 로 소인수 분해 알고리즘 |
+|          |            |             |
+| **String** | [KMP](Algorithm/src/KMP.cpp) | KMP 문자열 검색 알고리즘 |
+|            | [Manacher](Algorithm/src/Manacher.cpp) | Manacher의 팰린드롬 서브스트링 알고리즘 |
+|            |            |             |
+| **DP** | [LCS](Algorithm/src/LCS.cpp) | 최장 공통 부분 수열 알고리즘 |
+|        |            |             |
+| **Graph** | [DFS_BFS](Algorithm/src/DFS_BFS.cpp) | 깊이 우선 탐색 및 너비 우선 탐색 |
+|           | [Dijkstra](Algorithm/src/Dijkstra.cpp) | 다익스트라 최단 경로 알고리즘 |
+|           | [TopologySort](Algorithm/src/TopologySort.cpp) | 위상 정렬 알고리즘 |
+|           | [MST](Algorithm/src/MST.cpp) | 최소 신장 트리 알고리즘 |
+|           |            |             |
+| **Tree** | [FenwickTree](Algorithm/src/FenwickTree.cpp) | 펜윅 트리 |
+|          | [SegmentTree](Algorithm/src/SegmentTree.cpp) | 세그먼트 트리 |
+|          | [Trie](Algorithm/src/Trie.cpp) | 트라이 자료구조 |
+|          |            |             |
+| **Geometry** | [ConvexHull](Algorithm/src/ConvexHull.cpp) | 볼록 껍질 알고리즘 |
+|              |            |             |
+| **Others** | [Mos](Algorithm/src/Mos.cpp) | Mo's 알고리즘 |
 
 </details>
 
 <h4>Bronze ~ Ruby : 티어별 문제풀이 소스파일</h4>
 
 ## 달성 날짜 기록
-Platinum V 달성 2022/06/04 01:15:38</br>
-500솔 달성      2022/06/17 21:21:09</br>
-Class 5 달성    2022/08/25 09:44:40</br>
-Class 6 달성    2024/09/30 23:00:06</br>
-Gold 청소       2024/09/30 23:16:00</br>
-Diamond V 달성 / 1000솔 달성  2024/10/03 16:36:50</br>
+
+| Achievement | Date |
+|-------------|------|
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/16.svg" height=32 alt="Platinum V"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/06/04 01:15:38 |
+| <div style="display: flex; align-items: center;"><img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_00500.png%3F&w=32&q=75" height=32 alt="500 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/06/17 21:21:09 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/class/c5.svg" height=32 alt="Class 5"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/08/25 09:44:40 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/class/c6.svg" height=32 alt="Class 6"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/09/30 23:00:06 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/11.svg" height=32 alt="Gold"/> <span style="margin-left: 8px; font-weight: bold;">청소</span></div> | 2024/09/30 23:16:00 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/21.svg" height=32 alt="Diamond V"/> <span style="margin-left: 8px; margin-right: 6px; font-size: 16pt; font-weight: bold;"> / </span> <img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_01000.png%3F&w=32&q=75" height=32 alt="1000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/10/03 16:36:50 |
 
 ## Status
 [![LSolveRank1](https://github-readme-solvedac-hyp3rflow.vercel.app/api/?handle=lukince)](https://solved.ac/profile/lukince)
