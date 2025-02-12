@@ -63,6 +63,7 @@ u64 powmod(u64 a, u64 b, u64 m) {
 
     return r;
 }
+
 u64 invmod(u64 a, u64 m) {
     return powmod(a, m - 2, m);
 }

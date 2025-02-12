@@ -29,6 +29,7 @@
  * Reference
  *    - https://blog.joonas.io/23
  *    - egcd : https://p4per.dev/posts/Extended-Euclidean/
+ *             https://yuanie.tistory.com/18
  */
 
 #include <vector>
@@ -37,8 +38,12 @@
 
 using namespace std;
 
-tuple<int, int, int> egcd(int a, int b) {
-    pair<int, int>
+#ifndef i64
+#define i64 long long
+#endif
+
+tuple<i64, i64, i64> egcd(i64 a, i64 b) {
+    pair<i64, i64>
         r { a, b },
         z { 1, 0 },
         t { 0, 1 };
@@ -48,7 +53,7 @@ tuple<int, int, int> egcd(int a, int b) {
     auto& [t0, t1] = t;
 
     while (r1 > 0) {
-        int q = r0 / r1;
+        i64 q = r0 / r1;
         r = { r1, r0 - q * r1 };
         z = { z1, z0 - q * z1 };
         t = { t1, t0 - q * t1 };
@@ -57,18 +62,18 @@ tuple<int, int, int> egcd(int a, int b) {
     return { r0, z0, t0 };
 }
 
-long long inv(int a, int m) {
+i64 inv(i64 a, i64 m) {
     if (gcd(a, m) != 1) return -1;
 
     return (get<1>(egcd(a, m)) + m) % m;
 }
 
-long long __crt(int a1, int m1, int a2, int m2) {
+i64 __crt(int a1, int m1, int a2, int m2) {
     auto [r, a, _] = egcd(m1, m2);
 
     if ((a2 - a1) % r) return -1;
 
-    long long
+    i64
         p = (a2 - a1) / r * a,
         x = a1 + m1 * p,
         m = lcm(m1, m2);
@@ -76,7 +81,7 @@ long long __crt(int a1, int m1, int a2, int m2) {
     return ((x % m) + m) % m;
 }
 
-long long crt(const vector<pair<long long, long long>>& ps) {
+i64 crt(const vector<pair<i64, i64>>& ps) {
     if (ps.size() == 1) return -1;
 
     auto [prev_p, prev_mod] = ps[0];
