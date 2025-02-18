@@ -12,27 +12,31 @@
 
 | Category | Algorithm | Description |
 |----------|------------|-------------|
-| **Math** | [FFT](Algorithm/src/FFT.cpp) | 고속 푸리에 변환 알고리즘 |
-|          | [MillerRabin](Algorithm/src/MillerRabin.cpp) | 밀러-라빈 소수 판별법 |
-|          | [PollardRho](Algorithm/src/PollardRho.cpp) | 폴라드 로 소인수 분해 알고리즘 |
+| **Math** | [FFT](Algorithm/math/FFT.cpp) | 고속 푸리에 변환 알고리즘 |
+|          | [MillerRabin](Algorithm/math/MillerRabin.cpp) | 밀러-라빈 소수 판별법 |
+|          | [PollardRho](Algorithm/math/PollardRho.cpp) | 폴라드 로 소인수 분해 알고리즘 |
+|          | [modulo](Algorithm/math/modulo.cpp) | 모듈로 연산 알고리즘 집합 |
 |          |            |             |
-| **String** | [KMP](Algorithm/src/KMP.cpp) | KMP 문자열 검색 알고리즘 |
-|            | [Manacher](Algorithm/src/Manacher.cpp) | Manacher의 팰린드롬 서브스트링 알고리즘 |
+| **String** | [KMP](Algorithm/string/KMP.cpp) | KMP 문자열 검색 알고리즘 |
+|            | [Manacher](Algorithm/string/Manacher.cpp) | Manacher의 팰린드롬 알고리즘 |
 |            |            |             |
-| **DP** | [LCS](Algorithm/src/LCS.cpp) | 최장 공통 부분 수열 알고리즘 |
+| **DP** | [LCS](Algorithm/dp/LCS.cpp) | 최장 공통 부분 수열 알고리즘 |
 |        |            |             |
-| **Graph** | [DFS_BFS](Algorithm/src/DFS_BFS.cpp) | 깊이 우선 탐색 및 너비 우선 탐색 |
-|           | [Dijkstra](Algorithm/src/Dijkstra.cpp) | 다익스트라 최단 경로 알고리즘 |
-|           | [TopologySort](Algorithm/src/TopologySort.cpp) | 위상 정렬 알고리즘 |
-|           | [MST](Algorithm/src/MST.cpp) | 최소 신장 트리 알고리즘 |
+| **Graph** | [DFS_BFS](Algorithm/graph/DFS_BFS.cpp) | 깊이 우선 탐색 및 너비 우선 탐색 |
+|           | [Dijkstra](Algorithm/graph/Dijkstra.cpp) | 다익스트라 최단 경로 알고리즘 |
+|           | [TopologySort](Algorithm/graph/TopologySort.cpp) | 위상 정렬 알고리즘 |
+|           | [MST](Algorithm/graph/MST.cpp) | 최소 신장 트리 알고리즘 |
 |           |            |             |
-| **Tree** | [FenwickTree](Algorithm/src/FenwickTree.cpp) | 펜윅 트리 |
-|          | [SegmentTree](Algorithm/src/SegmentTree.cpp) | 세그먼트 트리 |
-|          | [Trie](Algorithm/src/Trie.cpp) | 트라이 자료구조 |
+| **Tree** | [FenwickTree](Algorithm/tree/FenwickTree.cpp) | 펜윅 트리 |
+|          | [SegmentTree](Algorithm/tree/SegmentTree.cpp) | 세그먼트 트리 |
+|          | [Trie](Algorithm/tree/Trie.cpp) | 트라이 자료구조 |
 |          |            |             |
-| **Geometry** | [ConvexHull](Algorithm/src/ConvexHull.cpp) | 볼록 껍질 알고리즘 |
+| **Geometry** | [ConvexHull](Algorithm/geometry/ConvexHull.cpp) | 볼록 껍질 알고리즘 |
+|              | [line-intersection](Algorithm/geometry/line-intersection.cpp) | 선분 교차 판정 알고리즘 |
 |              |            |             |
-| **Others** | [Mos](Algorithm/src/Mos.cpp) | Mo's 알고리즘 |
+| **struct** | [pmint](Algorithm/struct/pmint.cpp) | 소수 p & 나머지 연산 기반 정수 타입 |
+|          |            |            |
+| **Misc** | [Mos](Algorithm/misc/Mos.cpp) | Mo's 알고리즘 |
 
 </details>
 

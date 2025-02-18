@@ -10,17 +10,17 @@
 
 #include <vector>
 
-#define llong long long
-#define vll vector<llong>
+#define i64 long long
+#define vi64 vector<i64>
 
 using namespace std;
 
-vll init(vll);
-llong getSum(vll&, llong);
-void update(vll&, llong, llong);
+vi64 init(vi64);
+i64 getSum(vi64&, i64);
+void update(vi64&, i64, i64);
 
-vll init(vll arr) {
-    vll tree(arr.size() + 1, 0);
+vi64 init(vi64 arr) {
+    vi64 tree(arr.size() + 1, 0);
     
     int len = arr.size();
     for (int i = 0; i < len; i++) update(tree, i + 1, arr[i]);
@@ -28,8 +28,8 @@ vll init(vll arr) {
     return tree;
 }
 
-llong getSum(vll& tree, llong val) {
-    llong out = 0;
+i64 getSum(vi64& tree, i64 val) {
+    i64 out = 0;
     
     while (val > 0) {
         out += tree[val];
@@ -39,7 +39,7 @@ llong getSum(vll& tree, llong val) {
     return out;
 }
 
-void update(vll& tree, llong ind, llong val) {
+void update(vi64& tree, i64 ind, i64 val) {
     while (ind < tree.size()) {
         tree[ind] += val;
         ind += ind & -ind;

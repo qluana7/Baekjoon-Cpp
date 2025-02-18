@@ -21,30 +21,24 @@
  *    - https://goodbyefin.tistory.com/47
  */
 
-int i32a[] = { 2, 7, 61 };
-unsigned long long i64a[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
+#define u64 unsigned long long
+#define i64 long long
 
-int modpow(int n, int p, int m) {
-    int r = 1;
-    
-    while (p) {
-        if (p & 1) r = ((n % m) * (r % m)) % m;
-        
-        n = ((n % m) * (n % m)) % m;
-        
-        p >>= 1;
-    }
-    
-    return r;
-}
+extern u64 modpow(u64, u64, u64);
 
-bool miller_rabin(int n, int a) {
+// For i32.
+// int i32a[] = { 2, 7, 61 };
+
+// For u64
+u64 i64a[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+
+bool miller_rabin(u64 n, u64 a) {
     if (a == n) return true;
     
-    int d = n - 1;
+    u64 d = n - 1;
     
     while (true) {
-        int t = modpow(a, d, n);
+        u64 t = modpow(a, d, n);
         if (t == n - 1) return true;
         if (d % 2 == 1) return t == 1 || t == n - 1;
         d >>= 1;

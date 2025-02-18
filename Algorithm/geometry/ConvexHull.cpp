@@ -15,9 +15,7 @@
 #include <vector>
 #include <algorithm>
 
-#ifndef ll
-#define ll long long
-#endif
+#define i64 long long
 
 using namespace std;
 
@@ -26,10 +24,10 @@ struct pos_t {
     pos_t() : pos_t(0, 0) { }
     pos_t(int a, int b)
         : x(a), y(b), p(1), q(0) { }
-    ll x, y, p, q;
+    i64 x, y, p, q;
 };
 
-inline ll ccw(pos_t s, pos_t a, pos_t b) {
+inline i64 ccw(pos_t s, pos_t a, pos_t b) {
     return 1LL * (a.x - s.x) * (b.y - s.y) - 1LL * (b.x - s.x) * (a.y - s.y);
 }
 /* --- Common Implementation --- */

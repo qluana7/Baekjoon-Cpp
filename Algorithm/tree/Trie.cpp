@@ -9,8 +9,8 @@
  */
 
 #include <string>
+#include <vector>
 #include <map>
-#include <unordered_set>
 
 using namespace std;
 
@@ -39,7 +39,8 @@ public:
     void insert(const string& str);
     int count(const string& str) const;
 
-    int find(const string& str) const;
+    int get(const string& str) const;
+    vector<int> find(const string& str) const;
 };
 
 void Trie::insert(const string& str) {
@@ -53,4 +54,49 @@ void Trie::insert(const string& str) {
     }
     
     current->data = 1;
+}
+
+int Trie::count(const string& str) const {
+    Node* current = this->head;
+    for (auto x : str) {
+        int p = x - 'a';
+        if (current->children[p] == nullptr)
+            return 0;
+
+        current = current->children[p];
+    }
+    
+    return current->data;
+}
+
+int Trie::get(const string& str) const {
+    int cnt = 0;
+    Node* current = this->head;
+    for (auto x : str) {
+        int p = x - 'a';
+        current = current->children[p];
+        
+        if (current->csz > 1 || current->data) cnt++;
+    }
+
+    return cnt;
+}
+
+vector<int> Trie::find(const string& str) const {
+    vector<int> v;
+    int n = 0;
+    Node* current = this->head;
+
+    for (auto x : str) {
+        int p = x - 'a';
+        
+        if (current->data) v.push_back(n);
+        if (current->children[p] == nullptr)
+            break;
+
+        current = current->children[p];
+        n++;
+    }
+
+    return v;
 }

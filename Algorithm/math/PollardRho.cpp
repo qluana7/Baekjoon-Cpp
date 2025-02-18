@@ -28,21 +28,25 @@
 #include <numeric>
 #include <random>
 
-#include "../MillerRabin"
+#define u64 unsigned long long
+#define i64 long long
 
 using namespace std;
 
-#ifndef ll
-#define ll long long
-#endif
+/* From modulo.cpp */
+extern u64 mulmod(u64, u64, u64);
+
+/* From MilerrRabin.cpp */
+extern u64 i64a[12];
+extern bool miller_rabin(u64, u64);
 
 random_device rd;
 mt19937 engine;
 uniform_int_distribution rnd(1, 9);
 
-inline ll g(__int128_t x, __int128_t n, __int128_t r) { return (((x % n) * (x % n)) % n + r) % n; }
+inline u64 g(__int128_t x, __int128_t n, __int128_t r) { return (((x % n) * (x % n)) % n + r) % n; }
 
-bool isprime(ll n) {
+bool isprime(u64 n) {
     if (n == 1) return false;
     if (n == 2 || n == 3) return true;
     if (n % 2 == 0) return false;
@@ -54,17 +58,17 @@ bool isprime(ll n) {
     return true;
 }
 
-ll pollard_rho(ll n) {
+u64 pollard_rho(u64 n) {
     if (isprime(n)) return n;
     if (n == 1) return 1;
     if (n % 2 == 0) return 2;
 
-    ll x = 3, y = x, d = 1, r = rnd(engine);
+    u64 x = 3, y = x, d = 1, r = rnd(engine);
     
     while (d == 1) {
         x = g(x, n, r);
         y = g(g(y, n, r), n, r);
-        d = gcd(abs(x - y), n);
+        d = gcd(x > y ? x - y : y - x, n);
         
         if (d == n) return pollard_rho(n);
     }

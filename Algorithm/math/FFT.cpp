@@ -58,24 +58,26 @@ void FFT(vector<cpx>& v, bool inv = false) {
 
 using namespace std;
 
-#ifndef ll
-#define ll long long
-#endif
+#define i64 long long
 
-ll npow(ll a, ll b, ll mod_p) {
-    ll r = 1;
+i64 powmod(i64 a, i64 b, i64 m) {
+    i64 r = 1;
 
     while (b) {
-        if (b & 1) r = (r * a) % mod_p;
-        a = (a * a) % mod_p;
-        b = b >> 1;
+        if (b & 1) r = r * a % m;
+        a = a * a % m;
+        b >>= 1;
     }
 
     return r;
 }
 
-template<ll _w = 3LL, ll mod_p = 998244353LL>
-void FFT(vector<ll>& v, bool inv = false) {
+i64 invmod(i64 a, i64 m) {
+    return powmod(a, m - 2, m);
+}
+
+template<i64 _w = 3LL, i64 mod_p = 998244353LL>
+void FFT(vector<i64>& v, bool inv = false) {
     int n = v.size();
     
     for (int i = 1, j = 0; i < n; i++) {
@@ -84,20 +86,20 @@ void FFT(vector<ll>& v, bool inv = false) {
         if (i < j) swap(v[i], v[j]);
     }
     
-    ll x = npow(_w, (mod_p - 1) / n, mod_p);
-    if (inv) x = npow(x, mod_p - 2, mod_p);
+    i64 x = powmod(_w, (mod_p - 1) / n, mod_p);
+    if (inv) x = invmod(x, mod_p);
 
-    vector<ll> root(n >> 1); root[0] = 1;
+    vector<i64> root(n >> 1); root[0] = 1;
 
     for (int i = 1; i < (n >> 1); i++)
         root[i] = (root[i - 1] * x) % mod_p;
     
     for (int i = 2; i <= n; i <<= 1) {
-        ll c = n / i;
+        i64 c = n / i;
 
         for (int j = 0; j < n; j += i) {
             for (int k = 0, k_len = i >> 1; k < k_len; k++) {
-                ll a = v[j | k], b = (v[j | k | k_len] * root[c * k]) % mod_p;
+                i64 a = v[j | k], b = (v[j | k | k_len] * root[c * k]) % mod_p;
 
                 v[j | k] = (a + b) % mod_p;
                 v[j | k | k_len] = (a - b) % mod_p;
@@ -107,7 +109,7 @@ void FFT(vector<ll>& v, bool inv = false) {
     }
 
     if (inv) {
-        ll t = npow(n, mod_p - 2, mod_p);
+        i64 t = invmod(n, mod_p);
 
         for (int i = 0; i < n; i++)
             v[i] = (v[i] * t) % mod_p;
@@ -128,8 +130,8 @@ void convolution(vector<T>& v1, vector<T>& v2) {
     FFT(v1, true);
 }
 
-template<ll _w = 3LL, ll mod_p = 998244353LL>
-void convolution(vector<ll>& v1, vector<ll>& v2) {
+template<i64 _w = 3LL, i64 mod_p = 998244353LL>
+void convolution(vector<i64>& v1, vector<i64>& v2) {
     int s = 2;
     while (s < v1.size() + v2.size()) s <<= 1;
     
