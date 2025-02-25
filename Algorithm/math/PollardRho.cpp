@@ -73,5 +73,5 @@ u64 pollard_rho(u64 n) {
         if (d == n) return pollard_rho(n);
     }
     
-    return pollard_rho(n);
+    return pollard_rho(d);
 }
