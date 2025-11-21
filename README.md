@@ -52,6 +52,7 @@
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/class/c6.svg" height=32 alt="Class 6"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/09/30 23:00:06 |
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/11.svg" height=32 alt="Gold"/> <span style="margin-left: 8px; font-weight: bold;">청소</span></div> | 2024/09/30 23:16:00 |
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/21.svg" height=32 alt="Diamond V"/> <span style="margin-left: 8px; margin-right: 6px; font-size: 16pt; font-weight: bold;"> / </span> <img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_01000.png%3F&w=32&q=75" height=32 alt="1000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/10/03 16:36:50 |
+| <div style="display: flex; align-items: center;"><img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_02000.png%3F&w=32&q=75" height=32 alt="2000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2025/11/21 18:52:19 |
 
 ## Status
 [![LSolveRank1](https://github-readme-solvedac-hyp3rflow.vercel.app/api/?handle=lukince)](https://solved.ac/profile/lukince)
