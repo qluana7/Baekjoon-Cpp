@@ -9,5 +9,4 @@ auto/
 bjmgr/
 /**/bin
 /**/.cph
-# for integrating github codespace.
-Baekjoon-C/
+/debug

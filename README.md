@@ -1,6 +1,7 @@
-# Baekjoon-Cpp
+# Solve-Archive
 
-백준 C++ 도전기
+PS/CP with C++
+<h4>[26.05.04] 레포지토리의 이름이 변경되었습니다. (Baekjoon-Cpp -> Solve-Archive)</h4>
 
 ---
 
@@ -16,7 +17,17 @@
 ---
 
 ## Directories
-<h4> 156 : 156/0 (memory 156kb, time 0ms)를 위한 라이브러리 제작 프로젝트</h4>
+<h4>[⚠️ Deprecated!] 156 : 156/0 (memory 156kb, time 0ms)를 위한 라이브러리 제작 프로젝트</h4>
+
+<h4>Baekjoon : <a href="https://www.acmicpc.net/">Beakjoon Online Judge(백준)</a>에서의 문제 풀이 모음</h4>
+
+<h4>Atcoder : <a href="https://atcoder.jp/">Atcoder</a>에서의 문제 풀이 모음</h4>
+
+<h4>Codeforces : <a href="https://codeforces.com/">Codeforces</a>에서의 문제 풀이 모음</h4>
+
+<h4>Contest : 참가한 대회의 AC 기록 모음</h4>
+
+<h4>testcases : 일부 문제에 대한 추가적인 테스트 케이스 모음</h4>
 
 <h4>Algorithm : 알고리즘 구현체 모음</h4>
 
@@ -53,23 +64,19 @@
 
 </details>
 
-<h4>Bronze ~ Ruby : 티어별 문제풀이 소스파일</h4>
-
 ## 달성 날짜 기록
 
 | Achievement | Date |
 |-------------|------|
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/16.svg" height=32 alt="Platinum V"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/06/04 01:15:38 |
-| <div style="display: flex; align-items: center;"><img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_00500.png%3F&w=32&q=75" height=32 alt="500 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/06/17 21:21:09 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/profile_badge/120x120/solves_00500.png" height=32 alt="500 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/06/17 21:21:09 |
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/class/c5.svg" height=32 alt="Class 5"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2022/08/25 09:44:40 |
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/class/c6.svg" height=32 alt="Class 6"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/09/30 23:00:06 |
 | <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/11.svg" height=32 alt="Gold"/> <span style="margin-left: 8px; font-weight: bold;">청소</span></div> | 2024/09/30 23:16:00 |
-| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/21.svg" height=32 alt="Diamond V"/> <span style="margin-left: 8px; margin-right: 6px; font-size: 16pt; font-weight: bold;"> / </span> <img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_01000.png%3F&w=32&q=75" height=32 alt="1000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/10/03 16:36:50 |
-| <div style="display: flex; align-items: center;"><img src="https://solved.ac/_next/image?url=https%3A%2F%2Fstatic.solved.ac%2Fprofile_badge%2F120x120%2Fsolves_02000.png%3F&w=32&q=75" height=32 alt="2000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2025/11/21 18:52:19 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/tier_small/21.svg" height=32 alt="Diamond V"/> <span style="margin-left: 8px; margin-right: 6px; font-size: 16pt; font-weight: bold;"> / </span> <img src="https://static.solved.ac/profile_badge/120x120/solves_01000.png" height=32 alt="1000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2024/10/03 16:36:50 |
+| <div style="display: flex; align-items: center;"><img src="https://static.solved.ac/profile_badge/120x120/solves_02000.png?" height=32 alt="2000 Solve"/> <span style="margin-left: 8px; font-weight: bold;">달성</span></div> | 2025/11/21 18:52:19 |
 
 ## Status
-[![LSolveRank1](https://github-readme-solvedac-hyp3rflow.vercel.app/api/?handle=lukince)](https://solved.ac/profile/lukince)
-
-[![LSolveRank2](http://mazassumnida.wtf/api/v2/generate_badge?boj=lukince)](https://solved.ac/profile/lukince)
+[![LSolveRank](http://mazassumnida.wtf/api/v2/generate_badge?boj=lukince)](https://solved.ac/profile/lukince)
 
 **주의 : 상당히 난해한 코드가 존재할 수 있음.**
